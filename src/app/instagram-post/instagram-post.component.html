@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+<mat-card-header>
+    <img mat-card-avatar class="example-header-image" [src]="postt.headerUrl">
+    <mat-card-title>{{ postt.name }}</mat-card-title>
+   
+    <mat-card-subtitle>{{postt.location}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="postt.pictureUrl" alt="Photo">
+  <mat-card-content>
+    <p>
+      {{postt.longDescription}}
+    </p>
+  </mat-card-content>
+  <div>
+    <img class="like-icon" src="https://www.pinclipart.com/picdir/middle/76-766851_jewlr-instagram-like-icon-png-clipart.png"/>
+    <p class="likes">
+      {{postt.likes}}
+    </p>
+  </div>
+  </mat-card>

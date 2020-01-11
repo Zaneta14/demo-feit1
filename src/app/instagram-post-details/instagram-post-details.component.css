@@ -1,0 +1,12 @@
+.comment{
+    width: initial;
+}
+
+.scroll {
+    overflow: auto;
+    height: 87%;
+  }
+
+.pc {
+    width: 600px;
+}

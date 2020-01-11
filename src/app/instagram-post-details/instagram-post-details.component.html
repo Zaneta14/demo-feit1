@@ -1,0 +1,17 @@
+<div class="scroll">
+        <div class="comment"  *ngFor="let Comment of comments">
+                <mat-card-header>
+                        <img mat-card-avatar [src]="Comment.photoUrl">
+                        <mat-card-title>{{Comment.accountName}}</mat-card-title>
+                        <mat-card-subtitle>{{Comment.time}}</mat-card-subtitle>
+                </mat-card-header>
+                <p><b>{{Comment.comment}}</b></p>
+        </div>
+</div>
+
+<div>
+        <mat-form-field class="pc">
+          <input matInput placeholder="Add a comment..." [(ngModel)]="newcomment.comment">
+        </mat-form-field>
+        <button mat-raised-button (click)="oncomment()">POST</button>
+</div>
