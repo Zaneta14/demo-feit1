@@ -1,8 +1,10 @@
-<mat-toolbar color="primary">Instagram</mat-toolbar>
+<mat-toolbar color="primary" class="title">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Instagram-Icon.png" class="logo">
+<div><a class="home" href="/home">Instagram</a></div>
+</mat-toolbar>
 
   <div *ngFor="let post of posts">
-            <app-instagram-post [postt]="post" (click)="onclick(post)"></app-instagram-post>
+    <app-instagram-post [postt]="post"></app-instagram-post>
   </div>
 
-
-  
+ 

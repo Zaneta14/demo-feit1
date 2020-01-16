@@ -1,0 +1,18 @@
+.pictures {
+    display: inline-block;
+    margin-top:17px;
+}
+
+.picture {
+    width: 350px;
+    height: 230px;
+    margin-left: 10px;
+}
+
+.right {
+    float: right;
+}
+
+.point {
+    cursor: pointer;
+}

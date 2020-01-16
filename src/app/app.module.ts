@@ -15,12 +15,14 @@ import { InstagramPostComponent } from './instagram-post/instagram-post.componen
 import {MatGridListModule} from '@angular/material/grid-list';
 import { InstagramPostDetailsComponent } from './instagram-post-details/instagram-post-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InstagramProfileComponent } from './instagram-profile/instagram-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InstagramPostComponent,
     InstagramPostDetailsComponent,
+    InstagramProfileComponent,
   ],
   imports: [
     HttpClientModule,
@@ -39,6 +41,6 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [InstagramPostComponent, InstagramPostDetailsComponent]
+  entryComponents: [InstagramPostComponent, InstagramPostDetailsComponent, InstagramProfileComponent]
 })
 export class AppModule { }

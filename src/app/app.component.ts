@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import { InstagramPostDetailsComponent } from './instagram-post-details/instagram-post-details.component';
 import { InstagramApiService } from './instagram-api.service';
 
 @Component({
@@ -13,21 +12,15 @@ export class AppComponent {
 
   posts: Post[] = [];
 
+  pageNumber: number=1;
+
   constructor(public dialog: MatDialog, private apiService: InstagramApiService) {
-    this.apiService.getPosts().subscribe((receivedPosts)=>{
-      this.posts = receivedPosts;
-    });
+    this.getPosts();
   }  
 
-  onclick(post: Post) {
-    const dialogRef = this.dialog.open(InstagramPostDetailsComponent, {
-      width: '750px',
-      height: '700px',
-      data: {clickedpost : post}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+  getPosts(){
+    this.apiService.getPosts().subscribe((receivedPosts)=>{
+      this.posts = receivedPosts;
     });
   }
 }

@@ -1,20 +1,24 @@
 <mat-card class="example-card">
-<mat-card-header>
-    <img mat-card-avatar class="example-header-image" [src]="postt.headerUrl">
-    <mat-card-title>{{ postt.name }}</mat-card-title>
+<mat-card-header class="header">
+    <img mat-card-avatar class="example-header-image point" (click)="openprofile(postt)" [src]="postt.headerUrl">
+    <mat-card-title class="point" (click)="openprofile(postt)">{{ postt.name }}</mat-card-title>
    
     <mat-card-subtitle>{{postt.location}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="postt.pictureUrl" alt="Photo">
+  <div class="img__wrap">
+    <div (click)="onclick(postt)">
+      <img class="img__img" mat-card-image [src]="postt.pictureUrl" alt="Photo">
+    </div>
+  <p class="img__comm">Click to see comments</p>
+  </div>
   <mat-card-content>
-    <p>
+    <p><b>{{postt.name}}: </b>
       {{postt.longDescription}}
     </p>
   </mat-card-content>
-  <div>
-    <img class="like-icon" src="https://www.pinclipart.com/picdir/middle/76-766851_jewlr-instagram-like-icon-png-clipart.png"/>
-    <p class="likes">
-      {{postt.likes}}
+    <img class="icon point" [src]="postt.button" (click)="onLike()"/>
+      <p class="likes">
+        <strong> {{postt.likes}}</strong>
     </p>
-  </div>
+    <img class="icon savebutton point" [src]="postt.savebutton" (click)="onSave()"/>
   </mat-card>

@@ -9,7 +9,7 @@ export class InstagramApiService {
   constructor(private http: HttpClient) { }
 
   getPosts():Observable<Post[]>{
-    return this.http.get<Post[]>("https://5dfa537238678a00145fa10f.mockapi.io/api/posts")
+    return this.http.get<Post[]>(`https://5dfa537238678a00145fa10f.mockapi.io/api/posts`)
   }
 
   getPostComments(postId: number):Observable<PostComment[]>{
@@ -20,4 +20,8 @@ export class InstagramApiService {
     return this.http
     .post(`https://5dfa537238678a00145fa10f.mockapi.io/api/posts/${postId}/postComments`, comment);
   }
+
+  updatePost(post: Post, postId: number){
+    return this.http.put(`https://5dfa537238678a00145fa10f.mockapi.io/api/posts/${postId}`, post);
+}
 }
