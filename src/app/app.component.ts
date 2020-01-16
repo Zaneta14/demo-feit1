@@ -18,9 +18,20 @@ export class AppComponent {
     this.getPosts();
   }  
 
+  onNext(){
+    this.pageNumber++;
+    this.getPosts();
+  }
+
+  onPrev(){
+    this.pageNumber--;
+    this.getPosts();
+  }
+
   getPosts(){
-    this.apiService.getPosts().subscribe((receivedPosts)=>{
+    this.apiService.getPosts(this.pageNumber).subscribe((receivedPosts)=>{
       this.posts = receivedPosts;
     });
   }
+
 }

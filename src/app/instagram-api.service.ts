@@ -8,10 +8,7 @@ import { Observable } from 'rxjs';
 export class InstagramApiService {
   constructor(private http: HttpClient) { }
 
-  getPosts():Observable<Post[]>{
-    return this.http.get<Post[]>(`https://5dfa537238678a00145fa10f.mockapi.io/api/posts`)
-  }
-
+ 
   getPostComments(postId: number):Observable<PostComment[]>{
     return this.http.get<PostComment[]>(`https://5dfa537238678a00145fa10f.mockapi.io/api/posts/${postId}/postComments`)
   }
@@ -23,5 +20,8 @@ export class InstagramApiService {
 
   updatePost(post: Post, postId: number){
     return this.http.put(`https://5dfa537238678a00145fa10f.mockapi.io/api/posts/${postId}`, post);
+}
+getPosts(pageNumber: number):Observable<Post[]>{
+  return this.http.get<Post[]>(`https://5dfa537238678a00145fa10f.mockapi.io/api/posts?page=${pageNumber}&limit=2`)
 }
 }

@@ -20,3 +20,7 @@
 .home:hover {
   text-decoration: underline;
 }
+.nextprev {
+  text-align: center;
+  margin-top: 20px;
+}
